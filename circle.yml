@@ -1,0 +1,17 @@
+general:
+  artifacts:
+    - .
+
+test:
+  override:
+    - source $HOME/.bashrc    
+
+dependencies:
+  pre:
+    - echo "Singularity!"
+    - wget http://www.github.com/gmkurtzer/singularity.git
+    - cd singularity
+    - ./configure
+    - make
+    - make install
+    - which singularity
