@@ -9,7 +9,7 @@ test:
 dependencies:
   pre:
     - echo "Singularity!"
-    - wget http://www.github.com/gmkurtzer/singularity.git
+    - git clone http://www.github.com/gmkurtzer/singularity.git
     - cd singularity
     - ./configure
     - make
