@@ -10,7 +10,6 @@ dependencies:
   pre:
     - echo "Singularity!"
     - git clone http://www.github.com/gmkurtzer/singularity.git
-    - mkdir $HOME/bin
     - cd singularity
     - ./autogen.sh
     - ./configure --prefix=$HOME/bin
