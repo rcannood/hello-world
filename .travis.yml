@@ -1,0 +1,25 @@
+language: cpp
+
+sudo: true
+
+os: linux
+
+compiler:
+  - gcc
+
+before_install:
+  # so that adjusted PATH propagates into sudo
+  - sudo sed -i -e 's/^Defaults\tsecure_path.*$//' /etc/sudoers
+  - sudo apt-get install flawfinder
+
+install:
+  - git clone https://www.github.com/gmkurzer/singularity.git
+  - cd singularity
+  - ./autogen.sh
+  - ./configure --prefix=/usr/local
+  - make
+  - sudo make install
+#  - sudo ldconfig
+
+script:
+  - which singularity
