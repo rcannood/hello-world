@@ -13,7 +13,7 @@ before_install:
   - sudo apt-get install flawfinder
 
 install:
-  - git clone http://www.github.com/gmkurzer/singularity
+  - git clone http://www.github.com/gmkurtzer/singularity
   - cd singularity
   - ./autogen.sh
   - ./configure --prefix=/usr/local
