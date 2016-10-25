@@ -6,6 +6,7 @@ test:
   override:
     - source $HOME/.bashrc    
     - ls $PWD
+    - sudo /opt/google-cloud-sdk/bin/gsutil cp Singularity gs://singularity-hub
 
 dependencies:
   pre:
@@ -13,6 +14,10 @@ dependencies:
     - git clone http://www.github.com/singularityware/singularity.git
     - cd singularity && ./autogen.sh && ./configure --prefix=$HOME/bin && make && make install
     - echo "export PATH=$PATH:$HOME/bin/bin" >> $HOME/.bashrc
+    - echo $GCLOUD_SERVICE_KEY | base64 --decode > ${HOME}/gcloud-service-key.json
+    - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
+    - sudo /opt/google-cloud-sdk/bin/gcloud auth activate-service-account --key-file ${HOME}/gcloud-service-key.json
+    - sudo /opt/google-cloud-sdk/bin/gcloud config set project $GCLOUD_PROJECT
     - ls $HOME
     - ls $HOME/bin/bin
     - which singularity
