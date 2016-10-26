@@ -6,7 +6,9 @@ test:
   override:
     - source $HOME/.bashrc    
     - ls $PWD
-    - sudo /opt/google-cloud-sdk/bin/gsutil cp Singularity gs://singularity-hub
+    - package=`python run.py`
+    - sudo /opt/google-cloud-sdk/bin/gsutil cp $package gs://singularity-hub
+
 
 dependencies:
   pre:
@@ -21,3 +23,4 @@ dependencies:
     - ls $HOME
     - ls $HOME/bin/bin
     - which singularity
+    - pip install singularity --allow-external singularity --allow-unverified singularity
