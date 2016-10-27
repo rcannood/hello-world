@@ -17,6 +17,7 @@ if os.path.exists(singularityFile):
     image_package = build_from_spec(spec=singularityFile,
                                     name=name,
                                     build_dir=tmpdir,
+                                    output_folder=build_dir,
                                     size=size,
                                     sudopw=sudopw)
 
