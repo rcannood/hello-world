@@ -3,4 +3,4 @@ From: ubuntu:latest
 
 % runscript
 
-exec echo Hello Hello "$@"
+exec echo Hello "$@"
