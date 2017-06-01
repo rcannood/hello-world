@@ -1,6 +1,15 @@
 Bootstrap: docker
-From: ubuntu:latest
+From: ubuntu:14.04
 
-% runscript
+%labels
+MAINTAINER vanessasaur
 
-exec echo Hello Hallo "$@"
+%environment
+DINOSAUR=vanessasaurus"
+export DINOSAUR
+
+%files
+rawr.sh /rawr.sh
+
+%runscript
+exec /bin/bash /rawr.sh
