@@ -3,6 +3,7 @@ From: ubuntu:14.04
 
 %labels
 MAINTAINER vanessasaur
+WHATAMI dinosaur
 
 %environment
 DINOSAUR=vanessasaurus
