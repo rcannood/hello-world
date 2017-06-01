@@ -5,7 +5,7 @@ From: ubuntu:14.04
 MAINTAINER vanessasaur
 
 %environment
-DINOSAUR=vanessasaurus"
+DINOSAUR=vanessasaurus
 export DINOSAUR
 
 %files
