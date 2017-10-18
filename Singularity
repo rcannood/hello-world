@@ -12,5 +12,8 @@ export DINOSAUR
 %files
 rawr.sh /rawr.sh
 
+%post
+chmod u+x /rawr.sh
+
 %runscript
 exec /bin/bash /rawr.sh
